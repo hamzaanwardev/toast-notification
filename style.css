@@ -46,3 +46,14 @@ body {
     background-color: #fff;
     border-radius: 5px;
 }
+.toast.info {
+    color: purple;
+}
+
+.toast.success {
+    color: green;
+}
+
+.toast.error {
+    color: red;
+}

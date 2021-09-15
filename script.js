@@ -14,7 +14,7 @@ button.addEventListener('click', () => createNotifications ('This is invalid Dat
 function createNotifications (message = null, type = null) {
     const notif = document.createElement('div');
     notif.classList.add('toast');
-    notify.classList.add(type ? type : 'info');
+    Notify.classList.add(type ? type : 'getRandomType');
     notif.innerText = message ? message : getRandomMessages();
     toasts.appendChild(notif)
 
@@ -24,4 +24,8 @@ function createNotifications (message = null, type = null) {
 }
 function getRandomMessages () {
     return messages[Math.floor (Math.random()) * messages.length ]
+};
+
+function getRandomType () {
+    return types[Math.floor (Math.random()) * types.length ]
 };

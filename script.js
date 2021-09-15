@@ -8,24 +8,25 @@ const messages = [
     'Message Four'
 ];
 
-const types =['info', 'success', 'green'];
-button.addEventListener('click', () => createNotifications ('This is invalid Data', 'success'));
+const types = ['info', 'success', 'error'];
+button.addEventListener('click', () => createNotification ());
 
-function createNotifications (message = null, type = null) {
+function createNotification (message = null, type = null) {
     const notif = document.createElement('div');
     notif.classList.add('toast');
-    Notify.classList.add(type ? type : 'getRandomType');
-    notif.innerText = message ? message : getRandomMessages();
+    notif.classList.add(type ? type : getRandomType());
+    notif.innerText = message ? message : getRandomMessage();
     toasts.appendChild(notif)
 
     setTimeout ( () => {
         notif.remove()
     }, 3000)
 }
-function getRandomMessages () {
-    return messages[Math.floor (Math.random()) * messages.length ]
+
+function getRandomMessage () {
+    return messages[Math.floor (Math.random() * messages.length) ]
 };
 
 function getRandomType () {
-    return types[Math.floor (Math.random()) * types.length ]
+    return types[Math.floor (Math.random() * types.length) ]
 };
